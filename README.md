@@ -1,7 +1,7 @@
 Earth view with Thomas Pesquet photographies from ISS
 =====================================================
 
-![Paris from ISS](sreenshot.jpg)
+![Paris from ISS](screenshot.jpg)
 
 Thomas Pesquet, the french astronaut on ISS,
 is taking many photographies of earth, especially cities.
