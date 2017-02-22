@@ -17,7 +17,7 @@ You will maybe see your city or your house from the ISS!
 
 ### Demonstration
 
-Check the [Demonstration](https://eole-io.github.io/see-yourself-from-space).
+[Check the Demonstration](https://alcalyn.github.io/see-yourself-from-space).
 
 
 ## Install locally
