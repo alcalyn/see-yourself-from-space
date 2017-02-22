@@ -25,7 +25,7 @@
             bottomleft = L.latLng(anchors[2].x, anchors[2].y);
 
         L.imageOverlay.rotated(photo.url, topleft, topright, bottomleft, {
-            opacity: 0.3,
+            opacity: 0.5,
             alt: photo.alt
         }).addTo(map);
     }

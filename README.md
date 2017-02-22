@@ -1,6 +1,8 @@
 Earth view with Thomas Pesquet photographies from ISS
 =====================================================
 
+![Paris from ISS](sreenshot.jpg)
+
 Thomas Pesquet, the french astronaut on ISS,
 is taking many photographies of earth, especially cities.
 
@@ -12,13 +14,16 @@ and switch between Earth view/Earthphotographies from ISS.
 
 You will maybe see your city or your house from the ISS!
 
-[Demonstration link]().
+
+### Demonstration
+
+Check the [Demonstration](https://eole-io.github.io/see-yourself-from-space).
 
 
 ## Install locally
 
 ``` bash
-git clone ...
+git clone https://github.com/alcalyn/see-yourself-from-space.git
 ```
 
 Then go to the `index.html` file (no need for webserver, only html/js).
