@@ -51,9 +51,48 @@ This application uses:
 
 Want to add your city ?
 
-Fork the project, and add the photography to the `photos/` folder.
+Fork the project.
 
-Then go to `js/content.js`, and duplicate a `photo` item.
+### Download the photography
+
+From [Thomas Pesquet twitter account](https://twitter.com/Thom_astro),
+click the photography, open it in your browser.
+make sure to set `:orig` at the end of the url (i.e `https://pbs.twimg.com/media/C5S2BmnWIAAblpa.jpg:orig`)
+to have a good quality photography.
+
+The best would be to have a `3276 x 2183` pixels.
+
+Add the photography to the `photos/` folder
+
+### Place the photography
+
+Go to `js/content.js`, and duplicate a `photo` item:
+
+``` js
+        {
+            light: "day",
+            url: "photos/venezia.jpg",
+            alt: "Venezia",
+            size: {width: 3276, height: 2183},
+            anchors: [
+                {
+                    // Lido Island
+                    pixel: {x: 1220, y: 435},
+                    coords: {lat: 45.405704263039794, lon: 12.360885143280031}
+                },
+                {
+                    // Burano
+                    pixel: {x: 336, y: 2075},
+                    coords: {lat: 45.487019515608054, lon: 12.41952896118164}
+                },
+                {
+                    // Street intersect
+                    pixel: {x: 2769, y: 1840},
+                    coords: {lat: 45.470981023898084, lon: 12.269443273544313}
+                }
+            ]
+        }
+```
 
 First, it requires a few basics informations like
 the photo url, size in pixels, `day` or `night` photography.
@@ -61,7 +100,7 @@ the photo url, size in pixels, `day` or `night` photography.
 And last but not least, it needs three *anchor* points,
 for which you need to know the coordinates **both** in pixels and GPS coords.
 
-They should (recommanded) form a triangle, the greatest possible,
+They should (recommended) form a triangle, the greatest possible,
 and the nearest to equilateral (not a flat triangle).
 
 And choose a precise enough point like streets intersections,
@@ -69,6 +108,7 @@ end of road, peak of land, monument...
 
 Then just refresh the `index.html` page and check the result.
 
+![Example with Venezia](example-venezia.jpg)
 
 ## License
 
