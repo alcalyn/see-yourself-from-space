@@ -4,15 +4,15 @@ Earth view with Thomas Pesquet photographies from ISS
 ![Paris from ISS](screenshot.jpg)
 
 Thomas Pesquet, the french astronaut on ISS,
-is taking many photographies of earth, especially cities.
+is taking many photographies of Earth, especially cities.
 
 This application references some of these photographies,
 and superimposes them on a Earth view.
 
 Just navigate on the Earth like Google Maps,
-and switch between Earth view/Earthphotographies from ISS.
+and switch between Earth view/Earth photographies from ISS.
 
-You will maybe see your city or your house from the ISS!
+Maybe you'll see your city or your house from the ISS!
 
 
 ### Demonstration
@@ -51,7 +51,7 @@ This application uses:
 
 Want to add your city ?
 
-Fork the project.
+Fork the project, download the photography, and place it on the map.
 
 ### Download the photography
 
