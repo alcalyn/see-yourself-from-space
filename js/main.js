@@ -1,5 +1,5 @@
 (function (L, Content) {
-    var map = L.map('mapid').setView([48.85613168160397, 2.349357604980469], 13);
+    var map = L.map('mapid').setView([48.85613168160397, 2.349357604980469], 11);
 
     L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png').addTo(map);
 
