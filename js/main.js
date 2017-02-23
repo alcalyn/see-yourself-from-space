@@ -9,6 +9,7 @@
     });
 
     var photosLength = Content.photos.length;
+    var imageOverlays = [];
 
     for (var i = 0; i < photosLength; i++) {
         var photo = Content.photos[i];
@@ -25,10 +26,21 @@
             topright   = L.latLng(anchors[1].x, anchors[1].y),
             bottomleft = L.latLng(anchors[2].x, anchors[2].y);
 
-        L.imageOverlay.rotated(photo.url, topleft, topright, bottomleft, {
-            opacity: 0.5,
+        var imageOverlay = L.imageOverlay.rotated(photo.url, topleft, topright, bottomleft, {
             alt: photo.alt
         }).addTo(map);
+
+        imageOverlays.push(imageOverlay);
+    }
+
+    setPhotosOpacity(1);
+
+    function setPhotosOpacity(opacity) {
+        for (var i = 0; i < photosLength; i++) {
+            var imageOverlay = imageOverlays[i];
+
+            imageOverlay.setOpacity(opacity);
+        }
     }
 
     function calculateAnchors(a, earthA, b, earthB, c, earthC, photoSize) {
