@@ -45,6 +45,29 @@ var Content = {
                     coords: {lat: 46.18775616969914, lon: -1.1182558536529543}
                 }
             ]
+        },
+        {
+            light: "day",
+            url: "photos/venezia.jpg",
+            alt: "Venezia",
+            size: {width: 3276, height: 2183},
+            anchors: [
+                {
+                    // Lido Island
+                    pixel: {x: 1220, y: 435},
+                    coords: {lat: 45.405704263039794, lon: 12.360885143280031}
+                },
+                {
+                    // Burano
+                    pixel: {x: 336, y: 2075},
+                    coords: {lat: 45.487019515608054, lon: 12.41952896118164}
+                },
+                {
+                    // Street intersect
+                    pixel: {x: 2769, y: 1840},
+                    coords: {lat: 45.470981023898084, lon: 12.269443273544313}
+                }
+            ]
         }
     ]
 };
