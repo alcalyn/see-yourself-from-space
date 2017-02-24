@@ -37,6 +37,7 @@ For now you can navigate to these locations:
  - [Paris, France](https://alcalyn.github.io/see-yourself-from-space/#11/48.8561/2.3494)
  - [La Rochelle, France](https://alcalyn.github.io/see-yourself-from-space/#13/46.1581/-1.1726)
  - [Venezia, Italia](https://alcalyn.github.io/see-yourself-from-space/#12/45.4323/12.3459)
+ - [Nice, France](https://alcalyn.github.io/see-yourself-from-space/#11/43.6641/7.3001)
 
 
 ## Technical stack

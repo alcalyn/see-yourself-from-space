@@ -68,6 +68,29 @@ var Content = {
                     coords: {lat: 45.470981023898084, lon: 12.269443273544313}
                 }
             ]
+        },
+        {
+            light: "night",
+            url: "photos/nice-antibes.jpg",
+            alt: "Nice - Antibes",
+            size: {width: 3276, height: 2183},
+            anchors: [
+                {
+                    // Antibes road
+                    pixel: {x: 2883, y: 916},
+                    coords: {lat: 43.55103643145806, lon: 7.119312286376954}
+                },
+                {
+                    // Round road near Monaco
+                    pixel: {x: 666, y: 748},
+                    coords: {lat: 43.726157567247164, lon: 7.388885021209718}
+                },
+                {
+                    // Bridge near Carros
+                    pixel: {x: 1219, y: 1879},
+                    coords: {lat: 43.76562390847259, lon: 7.202278375625611}
+                }
+            ]
         }
     ]
 };
