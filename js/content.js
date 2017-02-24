@@ -106,12 +106,12 @@ var Content = {
                 {
                     // Varengeville-sur-Mer beach
                     pixel: {x: 2972, y: 1272},
-                    coords: {lat: 49.954004, lon: 1.179939}
+                    coords: {lat: 49.916568, lon: 1.007499}
                 },
                 {
-                    // Bridge near Carros
-                    pixel: {x: 1219, y: 1879},
-                    coords: {lat: 49.954004, lon: 1.179939}
+                    // End of airport road
+                    pixel: {x: 1968, y: 165},
+                    coords: {lat: 49.882599, lon: 1.085381}
                 }
             ]
         }
