@@ -114,6 +114,29 @@ var Content = {
                     coords: {lat: 49.882599, lon: 1.085381}
                 }
             ]
+        },
+        {
+            light: "day",
+            url: "photos/florianopolis.jpg",
+            alt: "Florianopolis",
+            size: {width: 3276, height: 2183},
+            anchors: [
+                {
+                    // Peak at left of photo
+                    pixel: {x: 202, y: 442},
+                    coords: {lat: -27.549657696172996, lon: -48.61216306686402}
+                },
+                {
+                    // Road intersection at bottom right of photo
+                    pixel: {x: 2915, y: 2146},
+                    coords: {lat: -27.646678247458926, lon: -48.52161169052125}
+                },
+                {
+                    // Road intersection at top right of photo
+                    pixel: {x: 2489, y: 258},
+                    coords: {lat: -27.572028338736267, lon: -48.51277112960816}
+                }
+            ]
         }
     ]
 };
