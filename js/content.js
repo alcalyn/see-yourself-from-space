@@ -91,6 +91,29 @@ var Content = {
                     coords: {lat: 43.76562390847259, lon: 7.202278375625611}
                 }
             ]
+        },
+        {
+            light: "day",
+            url: "photos/dieppe.jpg",
+            alt: "Dieppe",
+            size: {width: 3276, height: 2183},
+            anchors: [
+                {
+                    // Road intersection at bottom left of photo
+                    pixel: {x: 39, y: 1630},
+                    coords: {lat: 49.953994978469545, lon: 1.1799144744873047}
+                },
+                {
+                    // Varengeville-sur-Mer beach
+                    pixel: {x: 2972, y: 1272},
+                    coords: {lat: 49.954004, lon: 1.179939}
+                },
+                {
+                    // Bridge near Carros
+                    pixel: {x: 1219, y: 1879},
+                    coords: {lat: 49.954004, lon: 1.179939}
+                }
+            ]
         }
     ]
 };
