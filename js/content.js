@@ -137,6 +137,29 @@ var Content = {
                     coords: {lat: -27.572028338736267, lon: -48.51277112960816}
                 }
             ]
+        },
+        {
+            light: "day",
+            url: "https://pbs.twimg.com/media/C5W3fMsXAAA9LXr.jpg:orig",
+            alt: "Corse",
+            size: {width: 4096, height: 2729},
+            anchors: [
+                {
+                    // Peak of land at bottom right of photo
+                    pixel: {x: 3305, y: 2569},
+                    coords: {lat: 40.971603532799115, lon: 8.202667236328127}
+                },
+                {
+                    // Peak of land near Marina di campo, top of photo
+                    pixel: {x: 2535, y: 305},
+                    coords: {lat: 42.73591782230738, lon: 10.288009643554688}
+                },
+                {
+                    // Peak of land of Corse, left of photo
+                    pixel: {x: 1260, y: 1605},
+                    coords: {lat: 42.58418035503378, lon: 8.726062774658205}
+                }
+            ]
         }
     ]
 };

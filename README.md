@@ -40,6 +40,7 @@ For now you can navigate to these locations:
  - [Nice, France](https://alcalyn.github.io/see-yourself-from-space/#11/43.6641/7.3001)
  - [Dieppe, France](https://alcalyn.github.io/see-yourself-from-space/#12/49.9213/1.0914)
  - [Florianopolis, Brasil](https://alcalyn.github.io/see-yourself-from-space/#12/-27.5946/-48.5503)
+ - [Corse, France](https://alcalyn.github.io/see-yourself-from-space/#7/42.241/9.404) (experimental)
 
 
 ## Technical stack
