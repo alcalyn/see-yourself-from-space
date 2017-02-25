@@ -2,7 +2,9 @@
     var map = L.map('mapid').setView([48.85613168160397, 2.349357604980469], 11);
     new L.Hash(map);
 
-    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png').addTo(map);
+    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+        attribution: 'Wikimedia maps beta | Map data © <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
 
     map.on('click', function(e) {
         console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)

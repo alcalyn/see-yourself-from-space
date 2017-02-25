@@ -1,7 +1,7 @@
 Earth view with Thomas Pesquet photographies from ISS
 =====================================================
 
-![Paris from ISS](screenshot.jpg)
+![Paris from ISS](img/screenshot.jpg)
 
 Thomas Pesquet, the french astronaut on ISS,
 is taking many photographies of Earth, especially cities.
@@ -112,7 +112,7 @@ end of road, peak of land, monument...
 
 Then just refresh the `index.html` page and check the result.
 
-![Example with Venezia](example-venezia.jpg)
+![Example with Venezia](img/example-venezia.jpg)
 
 ## License
 
