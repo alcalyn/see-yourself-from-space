@@ -1,4 +1,7 @@
-(function (L, Content) {
+(function (document, L, Content, noUiSlider) {
+    /*
+     * Map
+     */
     var map = L.map('mapid').setView([48.85613168160397, 2.349357604980469], 11);
     new L.Hash(map);
 
@@ -10,6 +13,9 @@
         console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
     });
 
+    /*
+     * Add photographies
+     */
     var photosLength = Content.photos.length;
     var imageOverlays = [];
 
@@ -87,4 +93,21 @@
             ];
         };
     }
-})(L, Content);
+
+    /*
+     * Opacity slider
+     */
+    var opacitySlider = document.getElementById('opacity-slider');
+
+    noUiSlider.create(opacitySlider, {
+        start: 1,
+        range: {
+            min: 0,
+            max: 1
+        }
+    });
+
+    opacitySlider.noUiSlider.on('slide', function (n) {
+        setPhotosOpacity(n[0]);
+    });
+})(document, L, Content, noUiSlider);
