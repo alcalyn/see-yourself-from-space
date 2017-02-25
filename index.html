@@ -16,7 +16,15 @@
 
         <div id="opacity-slider"></div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <div id="dpi-detect" style="height: 1in; left: -100%; position: absolute; top: -100%; width: 1in;"></div>
+        <script type='text/javascript'>
+            var DPI = {};
+            DPI.devicePixelRatio = window.devicePixelRatio || 1;
+            DPI.x = document.getElementById('dpi-detect').offsetWidth * DPI.devicePixelRatio;
+            DPI.y = document.getElementById('dpi-detect').offsetHeight * DPI.devicePixelRatio;
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>

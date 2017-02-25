@@ -110,4 +110,43 @@
     opacitySlider.noUiSlider.on('slide', function (n) {
         setPhotosOpacity(n[0]);
     });
+
+    /*
+     * ISS position
+     */
+    var issDistanceInMeters = 400000;
+    var issMarker = L.marker();
+
+    function getIssDistanceInCentimeters() {
+        var metersPerPixel = 40075016.686 * Math.abs(Math.cos(map.getCenter().lat * Math.PI/180)) / Math.pow(2, map.getZoom()+8);
+        var issDistanceInPixels = issDistanceInMeters / metersPerPixel;
+        var issDistanceInInch = issDistanceInPixels / DPI.x;
+        var issDistanceInCentimeters = issDistanceInInch * 2.54;
+
+        return issDistanceInCentimeters;
+    }
+
+    function loadIssPosition() {
+        return jQuery.get('https://api.wheretheiss.at/v1/satellites/25544');
+    }
+
+    function goToIssPosition() {
+        loadIssPosition().then(function (iss) {
+            var issLatLng = new L.LatLng(iss.latitude, iss.longitude);
+            var cm = Math.round(getIssDistanceInCentimeters() * 10) / 10;
+            var info = [
+                '<b>ISS current location</b>',
+                '<br /><b>Speed</b>: '+Math.round(iss.velocity)+' km/h',
+                '<br /><b>Visibility</b>: '+iss.visibility,
+                '<br /><b>Altitude</b>: '+(Math.round(iss.altitude * 10) / 10)+' km',
+                '<br /><i>or <b>'+cm+' cm</b> from your screen'
+            ].join('');
+            //map.panTo(issLatLng);
+            issMarker.setLatLng(issLatLng);
+            issMarker.addTo(map);
+            issMarker.bindPopup(info).openPopup();
+        });
+    }
+
+    setInterval(goToIssPosition, 5000);
 })(document, L, Content, noUiSlider);
