@@ -160,6 +160,29 @@ var Content = {
                     coords: {lat: 42.58418035503378, lon: 8.726062774658205}
                 }
             ]
+        },
+        {
+            light: "night",
+            url: "photos/lisbon.jpg",
+            alt: "Lisbon",
+            size: {width: 4096, height: 2729},
+            anchors: [
+                {
+                    // Bottom photo, road intersection
+                    pixel: {x: 1654, y: 2584},
+                    coords: {lat: 38.82392836168541, lon: -9.177188873291017}
+                },
+                {
+                    // Top left of photo, road intersection
+                    pixel: {x: 681, y: 698},
+                    coords: {lat: 38.724408529218586, lon: -8.972804546356203}
+                },
+                {
+                    // Road intersect at top right of photo
+                    pixel: {x: 2925, y: 257},
+                    coords: {lat: 38.57772033581707, lon: -9.186812639236452}
+                }
+            ]
         }
     ]
 };
