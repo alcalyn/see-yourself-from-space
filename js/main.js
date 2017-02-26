@@ -116,6 +116,7 @@
      */
     var issDistanceInMeters = 400000;
     var issMarker = L.marker();
+    var issPopup = L.popup({autoPan: false});
 
     function getIssDistanceInCentimeters() {
         var metersPerPixel = 40075016.686 * Math.abs(Math.cos(map.getCenter().lat * Math.PI/180)) / Math.pow(2, map.getZoom()+8);
@@ -141,10 +142,12 @@
                 '<br /><b>Altitude</b>: '+(Math.round(iss.altitude * 10) / 10)+' km',
                 '<br /><i>or <b>'+cm+' cm</b> from your screen'
             ].join('');
-            //map.panTo(issLatLng);
+
+            issPopup.setContent(info);
+
             issMarker.setLatLng(issLatLng);
             issMarker.addTo(map);
-            issMarker.bindPopup(info).openPopup();
+            issMarker.bindPopup(issPopup).openPopup();
         });
     }
 
