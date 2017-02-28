@@ -1,8 +1,37 @@
-(function (document, L, Content, noUiSlider) {
+(function (window, document, L, Content, noUiSlider, DPI, Math, Promise) {
+    var mapOptions = {};
+
+    /*
+     * Context menu
+     */
+    mapOptions.contextmenu = true;
+    mapOptions.contextmenuWidth = 180;
+    mapOptions.contextmenuItems = [
+        {
+            text: 'Get coordinates',
+            callback: function (context) {
+                console.log(context);
+                alert('lat: '+context.latlng.lat+', lon: '+context.latlng.lng);
+            }
+        },
+        {
+            separator: true
+        },
+        {
+            text: 'Jump to ISS location',
+            callback: function () {
+                loadIssPosition().then(function (iss) {
+                    updateISS(iss);
+                    jumpToIss();
+                });
+            }
+        }
+    ];
+
     /*
      * Map
      */
-    var map = L.map('mapid').setView([48.85613168160397, 2.349357604980469], 11);
+    var map = L.map('mapid', mapOptions).setView([48.85613168160397, 2.349357604980469], 11);
     new L.Hash(map);
 
     L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
@@ -131,9 +160,10 @@
     var issDistanceInMeters = 400000;
     var issMarker = L.marker(null, {icon: issIcon});
     var issPopup = L.popup({autoPan: false});
+    var issLatLng = new L.LatLng(0, 0);
 
-    function getIssDistanceInCentimeters() {
-        var metersPerPixel = 40075016.686 * Math.abs(Math.cos(map.getCenter().lat * Math.PI/180)) / Math.pow(2, map.getZoom()+8);
+    function getIssDistanceInCentimeters(latitude) {
+        var metersPerPixel = 40075016.686 * Math.abs(Math.cos(latitude * Math.PI/180)) / Math.pow(2, map.getZoom()+8);
         var issDistanceInPixels = issDistanceInMeters / metersPerPixel;
         var issDistanceInInch = issDistanceInPixels / DPI.x;
         var issDistanceInCentimeters = issDistanceInInch * 2.54;
@@ -141,29 +171,33 @@
         return issDistanceInCentimeters;
     }
 
-    function loadIssPosition() {
-        return jQuery.get('https://api.wheretheiss.at/v1/satellites/25544');
+    function loadIssPosition(timestamps) {
+        if (!timestamps) {
+            return jQuery.get('https://api.wheretheiss.at/v1/satellites/25544');
+        } else {
+            return jQuery.get('https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps='+timestamps.join(','));
+        }
     }
 
-    function goToIssPosition() {
-        loadIssPosition().then(function (iss) {
-            var issLatLng = new L.LatLng(iss.latitude, iss.longitude);
-            var cm = Math.round(getIssDistanceInCentimeters() * 10) / 10;
-            var info = [
-                '<b>ISS current location</b>',
-                '<br /><b>Speed</b>: '+Math.round(iss.velocity)+' km/h',
-                '<br /><b>Visibility</b>: '+iss.visibility,
-                '<br /><b>Altitude</b>: '+(Math.round(iss.altitude * 10) / 10)+' km',
-                '<br /><i>or <b>'+cm+' cm</b> from your screen'
-            ].join('');
+    function updateISS(iss) {
+        issLatLng = new L.LatLng(iss.latitude, iss.longitude);
+        var cm = Math.round(getIssDistanceInCentimeters(iss.latitude) * 10) / 10;
+        var info = [
+            '<b>ISS current location</b>',
+            '<br /><b>Speed</b>: '+Math.round(iss.velocity)+' km/h',
+            '<br /><b>Visibility</b>: '+iss.visibility,
+            '<br /><b>Altitude</b>: '+(Math.round(iss.altitude * 10) / 10)+' km',
+            '<br /><i>or <b>'+cm+' cm</b> from your screen'
+        ].join('');
 
-            issPopup.setContent(info);
+        issPopup.setContent(info);
 
-            issMarker.setLatLng(issLatLng);
-            issMarker.addTo(map);
-            issMarker.bindPopup(issPopup).openPopup();
-        });
+        issMarker.setLatLng(issLatLng);
+        issMarker.addTo(map);
+        issMarker.bindPopup(issPopup).openPopup();
     }
 
-    setInterval(goToIssPosition, 5000);
-})(document, L, Content, noUiSlider);
+    function jumpToIss() {
+        map.panTo(issLatLng);
+    }
+})(window, document, L, Content, noUiSlider, DPI, Math, Promise);
