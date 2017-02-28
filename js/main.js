@@ -112,10 +112,24 @@
     });
 
     /*
+     * ISS marker
+     */
+    var issIcon = L.icon({
+        iconUrl: 'img/iss-icon.png',
+        shadowUrl: 'img/iss-icon-shadow.png',
+
+        iconSize:     [25, 41],
+        shadowSize:   [41, 41],
+        iconAnchor:   [12, 41],
+        shadowAnchor: [13, 41],
+        popupAnchor:  [0, -45]
+    });
+
+    /*
      * ISS position
      */
     var issDistanceInMeters = 400000;
-    var issMarker = L.marker();
+    var issMarker = L.marker(null, {icon: issIcon});
     var issPopup = L.popup({autoPan: false});
 
     function getIssDistanceInCentimeters() {
