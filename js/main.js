@@ -34,7 +34,7 @@
     var map = L.map('mapid', mapOptions).setView([48.85613168160397, 2.349357604980469], 11);
     new L.Hash(map);
 
-    L.tileLayer('https://b.tile.openstreetmap.org/${z}/${x}/${y}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data © <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     }).addTo(map);
 
