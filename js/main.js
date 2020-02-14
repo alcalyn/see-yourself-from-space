@@ -34,8 +34,8 @@
     var map = L.map('mapid', mapOptions).setView([48.85613168160397, 2.349357604980469], 11);
     new L.Hash(map);
 
-    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-        attribution: 'Wikimedia maps beta | Map data © <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    L.tileLayer('https://b.tile.openstreetmap.org/${z}/${x}/${y}.png', {
+        attribution: 'Map data © <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     }).addTo(map);
 
     map.on('click', function(e) {
